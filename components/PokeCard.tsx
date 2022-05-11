@@ -23,7 +23,7 @@ const PokeCard: FC<Props> = ( { name , img, id  }) => {
     <div className={ styles.container } onClick={ handleOnClick }>
       <div className={styles.content }>
         <p className={ styles.id }>#{ id }</p>
-        <Image className={ styles.img } src={ img } alt={name}/>
+        <Image className={ styles.img } src={ img } alt={name} width={160} height={160}/>
         <p className={ styles.name }>{ pokeName }</p>
       </div>
     </div>

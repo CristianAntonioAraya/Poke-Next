@@ -24,7 +24,7 @@ const PokeNamePage: NextPage<OptimizedData> = ( { pokemon }) => {
     return (
         <MainLayout title="pokePage">
             <div className={ styles.container }>
-                <Image className={ styles.image } src={ pokemon.sprites.main_sprite } alt={pokemon.name}/>
+                <Image className={ styles.image } src={ pokemon.sprites.main_sprite } alt={pokemon.name} width={400} height={400}/>
                 <div className={ styles.info__container}>
                     <div className={styles.info__content}>
                         <div>
@@ -42,10 +42,10 @@ const PokeNamePage: NextPage<OptimizedData> = ( { pokemon }) => {
                         </button>
                     </div>
                     <div className={ styles.sprites }>
-                        <Image className={ styles.single__sprite} src={pokemon.sprites.front_default} alt="front_default"/>
-                        <Image className={ styles.single__sprite} src={pokemon.sprites.back_default} alt="back_default"/>
-                        <Image className={ styles.single__sprite} src={pokemon.sprites.front_shiny} alt="front_shiny"/>
-                        <Image className={ styles.single__sprite} src={pokemon.sprites.back_shiny} alt="back_shiny"/>
+                        <Image width={400} height={400} className={ styles.single__sprite} src={pokemon.sprites.front_default} alt="front_default"/>
+                        <Image width={400} height={400} className={ styles.single__sprite} src={pokemon.sprites.back_default} alt="back_default"/>
+                        <Image width={400} height={400} className={ styles.single__sprite} src={pokemon.sprites.front_shiny} alt="front_shiny"/>
+                        <Image width={400} height={400} className={ styles.single__sprite} src={pokemon.sprites.back_shiny} alt="back_shiny"/>
                     </div>
                 </div>
             </div>
