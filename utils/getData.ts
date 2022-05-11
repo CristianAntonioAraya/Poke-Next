@@ -10,9 +10,18 @@ export const getAllPokemons = async ( request: string ) => {
 }
 
 export const getSinglePokemon = async ( request: string ) => {
-    const {data} = await axios.get<SinglePokemonInfo>( `${BASE_URL}${request}`)
+
+
+    const {data} = await axios.get<SinglePokemonInfo>( `${BASE_URL}/pokemon/${request}`)
+
+    const poke_name = data.name[0].toUpperCase() + data.name.slice(1)
+    const poke_id = `${ data.id }`
+    
+    console.log(`${BASE_URL}/pokemon/${request}`)
+
     const pokemon = { 
-        name : data.name,
+        name : poke_name,
+        id: poke_id,
         sprites : { 
             front_default: data.sprites.front_default,
             back_default: data.sprites.back_default,
@@ -20,7 +29,14 @@ export const getSinglePokemon = async ( request: string ) => {
             back_shiny: data.sprites.back_shiny,
             main_sprite: data.sprites.other?.dream_world.front_default 
         },
-        types : data.types
+        poke_types : data.types
     }
     return pokemon;
+}
+
+export const getPokemonsName = async ( request: string ) => { 
+    const {data} = await axios.get<PokemonListResponse>( `${BASE_URL}/pokemon?limit=${ request }`)
+    const pokemonsNames: string[] = data.results.map( poke => poke.name[0].toUpperCase() + poke.name.slice(1) )
+
+    return pokemonsNames;
 }

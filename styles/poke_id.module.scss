@@ -1,5 +1,67 @@
 @import './variable.module.scss';
 
-.title{
+.container {
+    width: 100%;
+    padding: 2rem 5rem;
+    display: grid;
+    grid-column-gap: 2rem;
+    grid-template-columns: 1fr 2fr;
+}
+.image{
+    padding: 5rem;
+    height: 25rem;
+}
+.info__container{
+    width: 100%;
+    background-color: $Secondary_Color;
+    padding: 2rem 6rem;
+    border-radius: 20px;
+    height: max-content;
+}
+.info__content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.name{
     color: $Light_Color;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.types{
+    display: flex;
+}
+.type_item{
+    display: flex;
+    padding: 0.5rem 1rem;
+    border: 1px solid white;
+    border-radius: 20px;
+    margin-right: 1rem;
+    color: $Light_Color;
+}
+.isfav__btn{
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 1rem;
+    background-color: black;
+    color: white;
+}
+.nofav__btn{
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 1rem;
+    background-color: white;
+    color: black;
+}
+.sprites{
+    margin: 2rem 0 0 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.single__sprite{
+    width: 100%;
 }

@@ -15,7 +15,7 @@ export interface SinglePokemonInfo {
     species:                  Species;
     sprites:                  Sprites;
     stats:                    Stat[];
-    types:                    Type[];
+    types:                    Type[]
     weight:                   number;
 }
 
@@ -170,5 +170,8 @@ export interface Stat {
 
 export interface Type {
     slot: number;
-    type: Species;
+    type: {
+        name: string,
+        url: string
+    };
 }

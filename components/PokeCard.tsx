@@ -5,7 +5,7 @@ import { useRouter } from 'next/router'
 type Props = {
   name: string;
   img: string;
-  id: number;
+  id: string;
 }
 
 
@@ -17,7 +17,7 @@ const PokeCard: FC<Props> = ( { name , img, id  }) => {
   const router = useRouter();
   
   const handleOnClick = () => {
-      router.push(`/pokemon/${ id }`)
+      router.push(`/pokemon/${ pokeName }`)
   }
 
   return (
