@@ -1,0 +1,54 @@
+@import './variable.module.scss';
+
+.container{
+    background-color: transparent;
+    border-radius: 20px;
+    cursor: pointer;
+    margin: 1rem;
+    padding: 3px;
+    transition: all .1s ease;
+    z-index: 3;
+    &:hover{
+        transform: scale(1.1);
+        background: linear-gradient(148deg, $Red_Color, $Blue_Color,$Red_Color, $Blue_Color);
+        animation: gradient 10s ease infinite;
+        background-size: 600% 600%;
+        background: cover;
+    }
+}
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.content{
+    position: relative;
+    padding: 1rem 4rem;
+    width: 100%;
+    background-color: $Secondary_Color;
+    border-radius: 20px;
+}
+.id{
+    color: $Light_Color;
+    top: 10px;
+    left: 20px;
+    position: absolute;
+    font-size: 20px;
+}
+.img{
+    width: 10rem;
+    height: 10rem;
+    padding: 1rem;
+}   
+.name{
+    color: $Light_Color;
+    text-align: center;
+}
+
+
