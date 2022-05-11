@@ -6,7 +6,7 @@ import PokeCard from "../components/PokeCard";
 
 
 
-const favorites = () => {
+const Favorites = () => {
 
     const [favsPokemon, setFavsPokemon] = useState<{name:string, id:string, img: string}[]>([])
 
@@ -20,7 +20,7 @@ const favorites = () => {
       <div className={ styles.content}>
           {
             favsPokemon.map( poke => (
-              <PokeCard name={poke.name} id={poke.id} img={poke.img}/>
+              <PokeCard key={poke.id} name={poke.name} id={poke.id} img={poke.img}/>
             ))
           }
       </div>
@@ -28,4 +28,4 @@ const favorites = () => {
   )
 }
 
-export default favorites
+export default Favorites

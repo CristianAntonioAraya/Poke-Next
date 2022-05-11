@@ -6,8 +6,9 @@ import styles from '../../styles/poke_id.module.scss';
 
 import { getPokemonsName, getSinglePokemon } from "../../utils/getData"
 import { isInLocalStorage, toggleFav } from "../../utils/localStorage";
+import Image from "next/image";
 
-const pokeNamePage: NextPage<OptimizedData> = ( { pokemon }) => {
+const PokeNamePage: NextPage<OptimizedData> = ( { pokemon }) => {
 
     const [isFav, setIsFav] = useState(false)
 
@@ -23,7 +24,7 @@ const pokeNamePage: NextPage<OptimizedData> = ( { pokemon }) => {
     return (
         <MainLayout title="pokePage">
             <div className={ styles.container }>
-                <img className={ styles.image } src={ pokemon.sprites.main_sprite }/>
+                <Image className={ styles.image } src={ pokemon.sprites.main_sprite } alt={pokemon.name}/>
                 <div className={ styles.info__container}>
                     <div className={styles.info__content}>
                         <div>
@@ -41,10 +42,10 @@ const pokeNamePage: NextPage<OptimizedData> = ( { pokemon }) => {
                         </button>
                     </div>
                     <div className={ styles.sprites }>
-                        <img className={ styles.single__sprite} src={pokemon.sprites.front_default} alt="front_default"/>
-                        <img className={ styles.single__sprite} src={pokemon.sprites.back_default} alt="back_default"/>
-                        <img className={ styles.single__sprite} src={pokemon.sprites.front_shiny} alt="front_shiny"/>
-                        <img className={ styles.single__sprite} src={pokemon.sprites.back_shiny} alt="back_shiny"/>
+                        <Image className={ styles.single__sprite} src={pokemon.sprites.front_default} alt="front_default"/>
+                        <Image className={ styles.single__sprite} src={pokemon.sprites.back_default} alt="back_default"/>
+                        <Image className={ styles.single__sprite} src={pokemon.sprites.front_shiny} alt="front_shiny"/>
+                        <Image className={ styles.single__sprite} src={pokemon.sprites.back_shiny} alt="back_shiny"/>
                     </div>
                 </div>
             </div>
@@ -80,4 +81,4 @@ export const getStaticProps:GetStaticProps = async ( ctx ) => {
 }
 
 
-export default pokeNamePage
+export default PokeNamePage

@@ -1,14 +1,13 @@
 import { FC } from 'react'
 import styles from '../styles/poke__card.module.scss'
 import { useRouter } from 'next/router'
+import Image from 'next/image';
 
 type Props = {
   name: string;
   img: string;
   id: string;
 }
-
-
 
 const PokeCard: FC<Props> = ( { name , img, id  }) => {
   
@@ -24,7 +23,7 @@ const PokeCard: FC<Props> = ( { name , img, id  }) => {
     <div className={ styles.container } onClick={ handleOnClick }>
       <div className={styles.content }>
         <p className={ styles.id }>#{ id }</p>
-        <img className={ styles.img } src={ img } />
+        <Image className={ styles.img } src={ img } alt={name}/>
         <p className={ styles.name }>{ pokeName }</p>
       </div>
     </div>

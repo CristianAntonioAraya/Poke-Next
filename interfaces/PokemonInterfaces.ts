@@ -9,5 +9,5 @@ export interface SinglePokemonResponse {
     name: string;
     url:  string;
     img: string;
-    id: number;
+    id: string;
 }
