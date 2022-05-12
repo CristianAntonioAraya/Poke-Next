@@ -61,7 +61,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
         paths: pokemonList.map( name => ({
             params: { name }
         })),
-        fallback: false
+        fallback: 'blocking'
     }
 }
 
@@ -73,10 +73,20 @@ export const getStaticProps:GetStaticProps = async ( ctx ) => {
 
     const pokemon  = await getSinglePokemon( `${ poke_name } `)
 
+    if( !pokemon ) {
+        return { 
+            redirect: {
+                destination: '/',
+                permanent: false
+            }
+        }
+    }
+
     return {
         props: {
             pokemon
-        }
+        },
+        revalidate: 86400,
     }
 }
 

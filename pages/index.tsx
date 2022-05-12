@@ -32,7 +32,7 @@ const Home:NextPage<Props> = ( { pokemons }) => {
 
 export const getStaticProps: GetStaticProps = async ( ctx ) =>{
 
-  const { results } = await getAllPokemons('/pokemon?limit=151')
+  const { results } = await getAllPokemons('/pokemon?limit=900')
 
   const pokemons = results.map( ( poke, index ) => (
     {
